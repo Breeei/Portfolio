@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: black;
+}
+
+.profile-box {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; 
+    background: transparent;
+    border: 2px solid rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px #fff;
+    animation: shadow-animation 2s infinite;
+}
+
+.profile-box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#verified {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    top: 70%;
+    left: 70%;
+}
+
+.profile-box h1 {
+    position: fixed;
+    top: calc(100% + 0.5em);
+    color: white;
+    text-shadow: 0 0 20px #fff;
+}
+
+.line {
+    position: fixed;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    top: 90%;
+    opacity: 0.5;
+}
+
+.left-line {
+    left: 10%;
+}
+
+.social-links {
+    position: absolute;
+    top: -6em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3em;
+    height: 5em;
+    gap: 0.5em;
+}
+
+.social-link-box {
+    width: 2em;
+    height: 2em;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px #fff;
+    overflow: visible;
+}
+
+.left-line .social-link-box box-icon {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.social-link-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #fff;
+}
+
+.right-line {
+    right: 10%;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    font-size: 5em;
+    text-shadow: 0 0 20px #fff;
+}
+
+.profile-roles {
+    position: absolute;
+    background-color: #15192F;
+    width: auto;
+    height: auto;
+    padding: 0.3em;
+    border-radius: 0.2em;
+    border: 1px solid rgba(255,255,255, 0.2);
+    position: fixed;
+    top: 50%;
+    left: calc(100% + 4em);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transform: translate(-50%, -50%);
+}
+
+.profile-roles img {
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+@keyframes shadow-animation {
+    0% {
+        box-shadow: 0 0 20px #fff;
+    }
+    50% {
+        box-shadow: 0 0 40px #fff;
+    }
+    100% {
+        box-shadow: 0 0 20px #fff;
+    }
+}
+
+.role-list {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    transform: translate(0, -50%);
+    opacity: 0.7;
+}
+
+/* simple line at the bottom of the role-list */
+.role-list::after {
+    content: "Developer";
+    position: absolute;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 1em);
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    opacity: 1 !important;
+    user-select: none;
+    font-size: 1em;
+    color: white;
+    text-shadow: 0 0 20px #fff;
+    text-align: center;
+}
+
+.role-list:hover {
+    opacity: 1;
+}
+
+.role {
+    width: 10em;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    user-select: none;
+}
+
+.role:hover {
+    transform: scale(1.1);
+}
+
+.role:hover > h1 {
+    text-shadow: 0 0 40px #fff;
+}
+
+.role h1 {
+    font-size: 1em;
+    color: white;
+    text-shadow: 0 0 20px #fff;
+}
+
+.role img {
+    width: 2em;
+    height: 2em;
+}
+
+.footer {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 0 0 20px #fff;
+    font-size: 0.7em;
+}
+
+.click-effect {
+    position: fixed;
+    width: 2em;
+    height: 2em;
+    opacity: 0.5;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: none;
+    animation: click-animation 0.5s ease-out forwards;
+    overflow: hidden;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+@keyframes click-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
